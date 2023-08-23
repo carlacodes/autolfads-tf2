@@ -18,7 +18,7 @@ MODEL:
   IC_POST_VAR_MIN: 1.0e-4
 TRAIN:
   DATA:
-    DIR: /snel/share/data/lfads_lorenz_20ms
+    DIR: D:\lfads_data_test\
     PREFIX: lfads
   PATIENCE: 150
   BATCH_SIZE: 500

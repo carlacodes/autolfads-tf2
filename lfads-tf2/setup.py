@@ -7,7 +7,7 @@ setup(
     install_requires=[
         "tensorflow-gpu==2.0.0",
         "tensorflow-probability==0.8.0",
-        "tensorflow-addons==0.6",
+        "tensorflow-addons",
         "tensorboard==2.0.2",
         "yacs==0.1.6",
         "PyYAML>=5.1",

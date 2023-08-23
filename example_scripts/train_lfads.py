@@ -16,7 +16,7 @@ running LFADS are:
 """
 
 from lfads_tf2.utils import restrict_gpu_usage
-restrict_gpu_usage(gpu_ix=0)
+# restrict_gpu_usage(gpu_ix=0)
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 from os import path
