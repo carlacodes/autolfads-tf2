@@ -44,7 +44,7 @@ SINGLE_MACHINE = True
 # How many models to train
 NUM_MODELS = 20
 # Whether to compute R2 with ground truth rates
-TRUTH_R2 = True
+TRUTH_R2 = False
 # ==========================================
 
 # Load HPs from the config file as flattened dict
@@ -102,7 +102,7 @@ analysis = tune.run(
     name=SEARCH_FOLDER,
     local_dir=SEARCH_HOME,
     config=flat_cfg_dict,
-    resources_per_trial={"cpu": 3, "gpu": 0.5},
+    resources_per_trial={"cpu": 5, "gpu": 0.8},
     num_samples=NUM_MODELS,
     sync_to_driver=False,
     verbose=1,
