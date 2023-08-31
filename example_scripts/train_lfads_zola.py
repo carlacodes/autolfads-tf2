@@ -27,14 +27,8 @@ from lfads_tf2.defaults import get_cfg_defaults, DEFAULT_CONFIG_DIR
 import h5py
 
 
-#open h5 file
-spikes_file = h5py.File('D:/lfads_data_test/lfads_lorenz_dataset.h5', 'r')
-#find the keys in this file
-list(spikes_file.keys())
-spikes_train = spikes_file['train_data']
 # create and train the LFADS model
-train_truth = spikes_file['train_truth']
-cfg_path = path.join(DEFAULT_CONFIG_DIR, 'lorenz.yaml')
+cfg_path = path.join(DEFAULT_CONFIG_DIR, 'zola.yaml')
 model = LFADS(cfg_path=cfg_path)
 model.train()
 
