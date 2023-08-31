@@ -21,9 +21,9 @@ from lfads_tf2.utils import (
 # The parent directory of the random search
 SEARCH_HOME = path.expanduser('~/tmp')
 # The folder name of the random search
-SEARCH_FOLDER = 'lorenz_randsearch'
+SEARCH_FOLDER = 'zola_randsearch'
 # Set the absolute path to the config file (use relative path for demo)
-relative_cfg_path = 'tune_tf2/config/lorenz.yaml'
+relative_cfg_path = 'D:/testneuralonlfads/autolfads-tf2/configs/zola.yaml'
 CFG_PATH = path.join(
     path.dirname(path.abspath(__file__)),
     relative_cfg_path)

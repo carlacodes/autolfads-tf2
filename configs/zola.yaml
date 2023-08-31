@@ -19,14 +19,14 @@ MODEL:
 TRAIN:
   DATA:
     DIR: D:\tf_h5files\F1702_Zola\
-    PREFIX: raster_reshaped_1_1_pitchshift_True
+    PREFIX: raster_reshaped_1_1_True
   PATIENCE: 150
   BATCH_SIZE: 500
   MAX_EPOCHS: 10000
   MAX_GRAD_NORM: 200.0
   LOSS_SCALE: 1.0
   LR: 
-    INIT: 1.0e-2
+    INIT: 1.0e-3
     DECAY: 1.0
   L2:
     START_EPOCH: 0
@@ -41,5 +41,5 @@ TRAIN:
     IC_WEIGHT: 6.65e-7
     CO_WEIGHT: 5.00e-5
   USE_TB: True
-  MODEL_DIR: ~/tmp/lfads_tf2/lorenz
+  MODEL_DIR: ~/tmp/lfads_tf2/zola
   OVERWRITE: True

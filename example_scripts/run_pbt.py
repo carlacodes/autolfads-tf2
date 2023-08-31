@@ -30,7 +30,7 @@ DATA_PREFIX = "chaotic"
 
 # ---------- PBT RUN CONFIGURATION ----------
 # whether to use single machine or cluster
-SINGLE_MACHINE = False
+SINGLE_MACHINE = True
 # the number of workers to use - make sure machine can handle all
 NUM_WORKERS = 40
 # the resources to allocate per model
