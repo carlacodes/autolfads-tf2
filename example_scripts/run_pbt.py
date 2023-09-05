@@ -19,7 +19,7 @@ from tune_tf2.pbt.trial_executor import SoftPauseExecutor
 # the default configuration file for the LFADS model
 CFG_PATH = path.join(DEFAULT_CONFIG_DIR, "zola.yaml")
 # the directory to save PBT runs (usually '~/ray_results')
-PBT_HOME = path.expanduser("~\\zola_results_0509\\")
+PBT_HOME = path.expanduser("~\\zola_results_0509_2\\")
 # the name of this PBT run (run will be stored at {PBT_HOME}/{PBT_NAME})
 RUN_NAME = "pbt_test_run_2"  # the name of the PBT run
 # the dataset to train the PBT model on
@@ -44,7 +44,7 @@ HYPERPARAM_SPACE = {
         0.0, 0.7, explore_wt=0.5, enforce_limits=True, sample_fn="uniform"
     ),
     "MODEL.CD_RATE": HyperParam(
-        0.01, 0.7, explore_wt=0.3, enforce_limits=True, init=0.5, sample_fn="uniform"
+        0.01, 0.7, explore_wt=0.3, enforce_limits=True, init=0.8, sample_fn="uniform"
     ),
     "TRAIN.L2.GEN_SCALE": HyperParam(1e-4, 1e-0, explore_wt=0.8),
     "TRAIN.L2.CON_SCALE": HyperParam(1e-4, 1e-0, explore_wt=0.8),

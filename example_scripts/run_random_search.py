@@ -21,7 +21,7 @@ from lfads_tf2.utils import (
 # The parent directory of the random search
 SEARCH_HOME = path.expanduser('~/tmp')
 # The folder name of the random search
-SEARCH_FOLDER = 'zola_randsearch'
+SEARCH_FOLDER = 'zola_randsearch_0509'
 # Set the absolute path to the config file (use relative path for demo)
 relative_cfg_path = 'D:/testneuralonlfads/autolfads-tf2/configs/zola.yaml'
 CFG_PATH = path.join(
@@ -31,7 +31,7 @@ CFG_PATH = path.join(
 CFG_SAMPLES = {
     'MODEL.DROPOUT_RATE': tune.uniform(0.0, 0.6),
     'MODEL.CD_RATE': 0.5,
-    'TRAIN.LR.INIT': 0.001,
+    'TRAIN.LR.INIT': 0.0001,
     'TRAIN.KL.IC_WEIGHT': tune.loguniform(1e-6, 1e-3),
     'TRAIN.KL.CO_WEIGHT': tune.loguniform(1e-6, 1e-3),
     'TRAIN.L2.IC_ENC_SCALE': tune.loguniform(1e-5, 1e-3),
@@ -102,7 +102,7 @@ analysis = tune.run(
     name=SEARCH_FOLDER,
     local_dir=SEARCH_HOME,
     config=flat_cfg_dict,
-    resources_per_trial={"cpu": 5, "gpu": 0.8},
+    resources_per_trial= {"cpu": 2, "gpu": 0.2},
     num_samples=NUM_MODELS,
     sync_to_driver=False,
     verbose=1,
