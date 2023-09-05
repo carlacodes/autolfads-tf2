@@ -17,31 +17,31 @@ from tune_tf2.pbt.trial_executor import SoftPauseExecutor
 
 # ---------- PBT I/O CONFIGURATION ----------
 # the default configuration file for the LFADS model
-CFG_PATH = path.join(DEFAULT_CONFIG_DIR, "chaotic.yaml")
+CFG_PATH = path.join(DEFAULT_CONFIG_DIR, "zola.yaml")
 # the directory to save PBT runs (usually '~/ray_results')
-PBT_HOME = path.expanduser("~/ray_results")
+PBT_HOME = path.expanduser("~\\zola_results_0509\\")
 # the name of this PBT run (run will be stored at {PBT_HOME}/{PBT_NAME})
 RUN_NAME = "pbt_test_run_2"  # the name of the PBT run
 # the dataset to train the PBT model on
 DATA_DIR = (
-    "/snel/share/data/lf2_pbt_validation/chaotic/chaotic_05_replications/sample_0"
+    "D:/tf_h5files/F1702_Zola/"
 )
-DATA_PREFIX = "chaotic"
+DATA_PREFIX = "raster_reshaped_1_1_True"
 
 # ---------- PBT RUN CONFIGURATION ----------
 # whether to use single machine or cluster
 SINGLE_MACHINE = True
 # the number of workers to use - make sure machine can handle all
-NUM_WORKERS = 40
+NUM_WORKERS = 3
 # the resources to allocate per model
-RESOURCES_PER_TRIAL = {"cpu": 2, "gpu": 0.5}
+RESOURCES_PER_TRIAL = {"cpu": 2, "gpu": 0.3}
 # the hyperparameter space to search
 HYPERPARAM_SPACE = {
     "TRAIN.LR.INIT": HyperParam(
-        1e-5, 5e-3, explore_wt=0.3, enforce_limits=True, init=0.004
+        1e-5, 5e-3, explore_wt=0.3, enforce_limits=True, init=0.0001
     ),
     "MODEL.DROPOUT_RATE": HyperParam(
-        0.0, 0.6, explore_wt=0.3, enforce_limits=True, sample_fn="uniform"
+        0.0, 0.7, explore_wt=0.5, enforce_limits=True, sample_fn="uniform"
     ),
     "MODEL.CD_RATE": HyperParam(
         0.01, 0.7, explore_wt=0.3, enforce_limits=True, init=0.5, sample_fn="uniform"
@@ -52,7 +52,7 @@ HYPERPARAM_SPACE = {
     "TRAIN.KL.IC_WEIGHT": HyperParam(1e-5, 1e-3, explore_wt=0.8),
 }
 PBT_METRIC = "smth_val_nll_heldin"
-EPOCHS_PER_GENERATION = 25
+EPOCHS_PER_GENERATION = 45
 # ---------------------------------------------
 
 # setup the data hyperparameters
