@@ -42,7 +42,7 @@ CFG_SAMPLES = {
 # Whether to use a single machine or connect to existing cluster
 SINGLE_MACHINE = True
 # How many models to train
-NUM_MODELS = 20
+NUM_MODELS = 5
 # Whether to compute R2 with ground truth rates
 TRUTH_R2 = False
 # ==========================================
